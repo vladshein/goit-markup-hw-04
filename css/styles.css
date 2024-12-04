@@ -92,6 +92,8 @@ img {
 /* #region-header */
 .header {
   border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .header-container {
@@ -193,20 +195,34 @@ img {
   text-decoration: none;
 }
 
-.header-nav-list-link {
-  color: #2e2f42;
+.header-nav-list-first-link {
   text-decoration: none;
   display: inline-block;
   padding: 24px 0;
+  position: relative;
+  color: #404bbf;
+  content: '';
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.header-list-item.active::after {
+.header-nav-list-first-link::after {
+  content: '';
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 4px;
+  background-color: #404bbf;
+  border-radius: 2px;
+}
+
+/* .header-list-item.active::after {
   content: '';
   display: block;
   background-color: #404bbf;
   width: 48px;
   height: 4px;
-}
+} */
 
 .header-nav-list-link:hover,
 .header-nav-list-link:focus {
@@ -220,12 +236,20 @@ img {
   display: flex;
   gap: 40px;
 }
+
+.header-address-list-item {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 /* #endregion header */
 
 /* #region-hero */
 .hero {
   background-color: #2e2f42;
-  background-image: url(../images/hero/Dark-bg.png),
+
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
     url(../images/hero/people-office_1.jpg);
   background-repeat: no-repeat;
   background-position: center;
