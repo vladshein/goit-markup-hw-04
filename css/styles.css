@@ -87,11 +87,6 @@ img {
   /* width: 1440px; */
 }
 
-.footer-container {
-  /* display: flex;
-  align-items: center; */
-  /* width: 1440px; */
-}
 /* #endregion containers */
 
 /* #region-header */
@@ -189,6 +184,9 @@ img {
   gap: 40px;
 }
 
+.header-nav-list:first-child::after {
+}
+
 .header-nav-list-studio {
   letter-spacing: 0.02em;
   font-weight: 500;
@@ -200,6 +198,14 @@ img {
   text-decoration: none;
   display: inline-block;
   padding: 24px 0;
+}
+
+.header-list-item.active::after {
+  content: '';
+  display: block;
+  background-color: #404bbf;
+  width: 48px;
+  height: 4px;
 }
 
 .header-nav-list-link:hover,
@@ -219,6 +225,11 @@ img {
 /* #region-hero */
 .hero {
   background-color: #2e2f42;
+  background-image: url(../images/hero/Dark-bg.png),
+    url(../images/hero/people-office_1.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
   padding: 188px 0;
 }
 
@@ -273,6 +284,17 @@ img {
   text-transform: capitalize;
 }
 
+.icon-thumb {
+  border-radius: 4px;
+  border: 1px solid var(--LIGHT-SLATE, #8e8f99);
+  background: var(--CLOUD, #f4f4fd);
+  padding: 20px 100px;
+  margin-bottom: 8px;
+}
+.icons {
+  flex-shrink: 0;
+}
+
 /* #region section-two our team */
 
 .section-two {
@@ -313,7 +335,34 @@ img {
   letter-spacing: 0.02em;
   font-weight: 400;
   text-align: center;
+  margin-bottom: 8px;
 }
+
+.socials-background {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #4d5ae5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.socials-background:hover {
+  background-color: #31d0aa;
+}
+
+.section-socials-list {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+}
+
+.socials-icons {
+  fill: #f4f4fd;
+}
+
 /* #endregion section-two our team */
 
 /* #region section three */
@@ -348,6 +397,15 @@ img {
   padding: 100px 0;
 }
 
+.footer-container {
+  display: flex;
+  /* align-items: center; */
+  /* width: 1440px; */
+}
+
+.footer-logo-text {
+  margin-right: 120px;
+}
 .footer-nav-logo {
   color: #4d5ae5;
   font-family: 'Raleway', sans-serif;
@@ -370,4 +428,10 @@ img {
   letter-spacing: 0.02em;
   max-width: 264px;
 }
+
+.footer-socials-text {
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
 /* #endregion footer */
